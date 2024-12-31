@@ -2,14 +2,14 @@
 FROM kalilinux/kali-rolling
 
 # Update and install core OS features
-RUN apt update && \
-    apt full-upgrade -y && \
-    apt -y install kali-linux-core
+RUN apt-get update -q -y && \
+    apt-get full-upgrade -q -y && \
+    apt-get install kali-linux-core -q -y
 
 # Install nmap
-RUN apt -y install nmap
+RUN apt-get install nmap -q -y
 
 # Remove cache to reduce used space
-RUN apt clean
+RUN apt-get clean
 
 CMD ["/bin/bash"]
