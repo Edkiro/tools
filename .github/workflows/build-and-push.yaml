@@ -16,6 +16,10 @@ jobs:
       contents: read
       packages: write
     steps:
+      # Step 0: Check Runner Architecture
+      - name: Check Runner Architecture
+        run: uname -m
+        
       # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
