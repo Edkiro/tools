@@ -42,4 +42,4 @@ jobs:
           platforms: linux/arm64 # Build for Macs
           tags: |
             ghcr.io/edkiro/tools:latest
-            ghcr.io/edkiro/tools:${{ steps.version.outputs.version }} # Use a semantic versioning strategy to bump the version
+            ghcr.io/edkiro/tools:${{ steps.version.outputs.version }}
