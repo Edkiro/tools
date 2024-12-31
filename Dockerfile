@@ -1,11 +1,15 @@
-# Use the official Kali Linux Docker image
+# Use a rolling image
 FROM kalilinux/kali-rolling
 
-# Update the package list and install the core metapackage
+# Update and install core OS features
 RUN apt update && \
     apt full-upgrade -y && \
-    apt -y install kali-linux-core && \
-    apt clean
+    apt -y install kali-linux-core
 
-# Set the default command to run when starting the container
+# Install nmap
+RUN apt -y install nmap
+
+# Remove cache to reduce used space
+RUN apt clean
+
 CMD ["/bin/bash"]
