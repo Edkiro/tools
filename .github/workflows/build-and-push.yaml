@@ -40,4 +40,6 @@ jobs:
           context: .  # Path to the directory containing the Dockerfile
           push: true  # Push the image to GHCR
           platforms: linux/arm64 # Build for Macs
-          tags: ghcr.io/${{ github.repository }}:${{ steps.version.outputs.version }} # Use a semantic versioning strategy to bump the version
+          tags: |
+            ghcr.io/edkiro/tools:latest
+            ghcr.io/edkiro/tools:${{ steps.version.outputs.version }} # Use a semantic versioning strategy to bump the version
